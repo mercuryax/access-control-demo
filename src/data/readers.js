@@ -1,0 +1,46 @@
+/**
+ * Created by ajsta on 12/8/2017.
+ */
+
+export default [
+    {
+        "id": 10,
+        "typeId": 1,
+        "name": "Reader F1"
+    },
+    {
+        "id": 11,
+        "typeId": 1,
+        "name": "Reader F2"
+    },
+    {
+        "id": 12,
+        "typeId": 1,
+        "name": "Reader F3"
+    },
+    {
+        "id": 13,
+        "typeId": 1,
+        "name": "Reader F4"
+    },
+    {
+        "id": 14,
+        "typeId": 1,
+        "name": "Reader F5"
+    },
+    {
+        "id": 15,
+        "typeId": 2,
+        "name": "Reader E"
+    },
+    {
+        "id": 16,
+        "typeId": 3,
+        "name": "Reader B"
+    },
+    {
+        "id": 17,
+        "typeId": 4,
+        "name": "Reader S"
+    }
+];

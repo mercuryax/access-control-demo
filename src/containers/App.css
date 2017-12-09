@@ -1,0 +1,168 @@
+/* App container styles */
+
+.App {
+    text-align: center;
+    max-width: 1000px;
+}
+
+/* BEGIN App header styles */
+
+.header {
+    width: 100%;
+    border-bottom: 4px solid #D5D5D5;
+    text-align: left;
+}
+
+.header h5 {
+    font-weight: bold;
+    margin: 0;
+}
+
+/* END App header styles */
+/* BEGIN App main panel styles */
+
+.access-panel {
+    width: 100%;
+}
+
+/* END App main panel styles */
+/* BEGIN App grid styles */
+
+.access-grid {
+    float: left;
+    width: 50%;
+}
+
+.search-bar {
+    margin-top: 12px;
+    width: calc(100% - 10px);
+    height: 50px;
+    padding: 5px 5px 0px 5px;
+    background-color: #F2F2F2;
+    background-clip: content-box;
+}
+
+.search-bar img {
+    margin: 0;
+    float: left;
+    height: 16px;
+    width: 16px;
+    padding: 6px;
+}
+
+.search-bar input {
+    float: left;
+    height: 8px;
+    padding: 6px;
+    margin-left: 12px;
+    margin-top: 3px;
+    width: calc(100% - 60px);
+}
+
+.search-bar img:hover {
+    opacity: 0.6;
+}
+
+.grid {
+    width: calc(100% - 10px);
+    padding: 0 5px 5px 5px;
+}
+
+.grid-table {
+    width: 100%;
+    text-align: left;
+    border-spacing: 0;
+}
+
+.grid-table thead {
+    background-color: #F2F2F2;
+}
+
+.grid-table td, th {
+    border-bottom: 2px solid #E8E8E8;
+    border-right: 2px solid #E8E8E8;
+    padding-left: 6px;
+}
+
+.grid-table tr td:first-child {
+    width: 50%;
+    border-left: 2px solid #E8E8E8;
+}
+
+tr:hover > td {
+    border-top: 2px solid lightskyblue;
+    border-bottom: 2px solid lightskyblue;
+    border-right: 2px solid lightskyblue;
+}
+
+tr:hover > td:first-child {
+    border-left: 2px solid lightskyblue;
+}
+
+/* END App grid styles */
+/* BEGIN App form styles */
+
+.access-form {
+    float: left;
+    width: calc(50% - 40px);
+    text-align: left;
+    padding-left: 40px;
+}
+
+.access-form h4{
+    font-weight: inherit;
+    margin: 17px 0 32px 0;
+}
+
+.form{
+    width: 100%;
+}
+
+.form-leftgroup{
+    width: 30%;
+    float: left;
+}
+
+.form-leftgroup h6{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.form-leftgroup h6:nth-child(3){
+    margin-top: 60px;
+}
+
+.form-rightgroup{
+    width: calc(70% - 6px);
+    padding-right: 6px;
+    float: left;
+}
+
+.form-rightgroup input[type=text]{
+    padding-top: 0;
+    /*height: 0.67em;*/
+}
+
+.form-rightgroup textarea{
+    width: 100%;
+}
+
+button{
+    margin-top: 6px;
+    margin-right: 6px;
+}
+
+/* END App form styles */
+/* Media queries */
+
+@media only screen and (max-width: 1000px) {
+    .access-grid {
+        width: 100%;
+        float: inherit;
+    }
+
+    .access-form {
+        width: 100%;
+        float: inherit;
+    }
+}
