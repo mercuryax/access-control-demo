@@ -1,4 +1,5 @@
 import React from 'react';
+import Readers from '../data/readers';
 
 class Form extends React.Component {
 
@@ -15,6 +16,7 @@ class Form extends React.Component {
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
         this.handleReaderChange = this.handleReaderChange.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
     }
 
     componentDidMount() {
@@ -24,7 +26,6 @@ class Form extends React.Component {
             description: this.props.selectedRowData.description,
             reader: this.props.selectedRowData.reader,
             readerType: this.props.selectedRowData.readerType
-
         });
     }
 
@@ -35,7 +36,6 @@ class Form extends React.Component {
             description: nextProps.selectedRowData.description,
             reader: nextProps.selectedRowData.reader,
             readerType: nextProps.selectedRowData.readerType
-
         });
     }
 
@@ -57,6 +57,17 @@ class Form extends React.Component {
         })
     }
 
+    handleCancel(e){
+        e.preventDefault();
+        this.setState({
+            id: this.props.selectedRowData.id,
+            name: this.props.selectedRowData.name,
+            description: this.props.selectedRowData.description,
+            reader: this.props.selectedRowData.reader,
+            readerType: this.props.selectedRowData.readerType
+        })
+    }
+
     render() {
         return (
             <form className="form">
@@ -69,15 +80,16 @@ class Form extends React.Component {
                         return this.props.handleSubmit(this.state)
                     }}>Submit
                     </button>
-                    <button>Cancel</button>
+                    <button onClick={this.handleCancel}>Cancel</button>
                 </div>
                 <div className="form-rightgroup">
                     <input type="text" value={this.state.name} onChange={this.handleNameChange}/>
                     <textarea name="" id="" cols="30" rows="4" value={this.state.description}
                               onChange={this.handleDescriptionChange}/>
                     <select name="" id="" onChange={this.handleReaderChange}>
-                        <option>All Reader Groups</option>
-                        <option value={this.state.reader}>{this.state.reader}</option>
+                        {Readers
+                            .map(reader => <option value={reader.name}>{reader.name}</option>)
+                        }
                     </select>
                 </div>
             </form>
