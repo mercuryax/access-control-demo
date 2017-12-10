@@ -89,6 +89,10 @@
     border-left: 2px solid #E8E8E8;
 }
 
+tr:hover{
+    cursor: pointer;
+}
+
 tr:hover > td {
     border-top: 2px solid lightskyblue;
     border-bottom: 2px solid lightskyblue;
@@ -162,7 +166,8 @@ button{
     }
 
     .access-form {
-        width: 100%;
+        width: calc(100% - 10px);
         float: inherit;
+        padding: 5px 5px 5px 5px;
     }
 }
