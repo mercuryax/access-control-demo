@@ -3,7 +3,7 @@ import Plus from '../images/plus.svg';
 
 const SearchBar = props =>
     <div className="search-bar">
-        <img src={Plus} alt="Add Item"/>
+        <img src={Plus} alt="Add Item" onClick={props.handleAddItem}/>
         <input type="text" placeholder="Spotlight Search" onChange={props.handleSearch}/>
     </div>;
 

@@ -41,7 +41,7 @@ class AccessGrid extends React.Component {
     render() {
         return (
             <div className="access-grid">
-                <SearchBar handleSearch={this.handleSearch}/>
+                <SearchBar handleSearch={this.handleSearch} handleAddItem={this.props.handleAddItem}/>
                 <Grid rows={this.state.filteredRows} handleRowSelect={this.props.handleRowSelect}/>
             </div>
         );
