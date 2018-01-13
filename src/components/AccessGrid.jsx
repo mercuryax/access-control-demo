@@ -12,6 +12,9 @@ class AccessGrid extends React.Component {
         this.handleSearch = this.handleSearch.bind(this);
     }
 
+    // by default, any search-filtered rows are really
+	// filtered by the empty string
+
     componentDidMount() {
         this.setState({
             filteredRows: this.props.rows
@@ -23,6 +26,10 @@ class AccessGrid extends React.Component {
             filteredRows: nextProps.rows
         });
     }
+
+    // returns a subset of the original row content
+	// based on the search string. Keeps the entire original
+	// content if no string specified
 
     handleSearch(e) {
 

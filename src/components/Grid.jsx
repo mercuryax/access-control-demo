@@ -12,7 +12,7 @@ const Grid = props =>
             </thead>
             <tbody>
             {props.rows.map(row =>
-                <tr id={row.id} onClick={e => props.handleRowSelect(e)}>
+                <tr id={row.id} onClick={e => props.handleRowSelect(e)} key={row.id}>
                     <td>{row.name}</td>
                     <td>{row.readerType}</td>
                     <td>{row.reader}</td>

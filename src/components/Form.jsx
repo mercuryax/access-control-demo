@@ -2,7 +2,12 @@ import React from 'react';
 import Readers from '../data/readers';
 import ReaderTypes from '../data/readerTypes';
 
+
+
 class Form extends React.Component {
+
+	// initialize with blank data, since nothing is
+	// selected on initial render
 
 	constructor() {
 		super();
@@ -29,6 +34,9 @@ class Form extends React.Component {
 			readerType: this.props.selectedRowData.readerType
 		});
 	}
+
+	// when rowdata is changed, update local
+	// state to reflect the new data
 
 	componentWillReceiveProps(nextProps) {
 		this.setState({
@@ -61,6 +69,9 @@ class Form extends React.Component {
 		})
 	}
 
+	// if user clicks cancel button,
+	// restore the original values
+
 	handleCancel(e) {
 		e.preventDefault();
 		this.setState({
@@ -92,7 +103,7 @@ class Form extends React.Component {
 							  onChange={this.handleDescriptionChange}/>
 					<select name="" id="" onChange={this.handleReaderChange}>
 						{Readers
-							.map(reader => <option value={reader.name}>{reader.name}</option>)
+							.map((reader, index) => <option value={reader.name} key={index}>{reader.name}</option>)
 						}
 					</select>
 				</div>

@@ -7,6 +7,9 @@ import ReaderTypes from '../data/readerTypes';
 
 class AccessPanel extends React.Component {
 
+	// initialize table with default values from startup
+	// this could be any data persisted between runs
+
 	constructor() {
 		super();
 		this.state = {
@@ -16,9 +19,9 @@ class AccessPanel extends React.Component {
 					"id": row.id,
 					"name": row.name,
 					"description": row.Description,
-					"reader": Readers[Readers.findIndex(reader => reader.id == row.readerId)].name,
+					"reader": Readers[Readers.findIndex(reader => reader.id === row.readerId)].name,
 					"readerType": ReaderTypes[ReaderTypes.findIndex(
-						readertype => readertype.id == Readers[Readers.findIndex(reader => reader.id == row.readerId)].typeId
+						readertype => readertype.id === Readers[Readers.findIndex(reader => reader.id === row.readerId)].typeId
 					)].name
 				};
 			})
@@ -30,6 +33,9 @@ class AccessPanel extends React.Component {
 
 	}
 
+	// when clicking a row in the grid, make it so the row contents
+	// are shown in the view panel
+
 	handleRowSelect(e) {
 		e.preventDefault();
 		this.setState({
@@ -37,11 +43,13 @@ class AccessPanel extends React.Component {
 		});
 	}
 
+	// handle saving of the table data (by row) when clicking submit
+
 	handleSubmit(newRowData) {
 		const rowData = this.state.rowData;
 		this.setState({
 			rowData: rowData.map(row => {
-				if (row.id == newRowData.id) {
+				if (row.id === newRowData.id) {
 					return {
 						id: newRowData.id,
 						name: newRowData.name,
@@ -57,6 +65,9 @@ class AccessPanel extends React.Component {
 		});
 	}
 
+	// add a new row to the table data.
+	// populate with some default values.
+
 	handleAddItem() {
 
 		let newEntry = {
@@ -71,6 +82,10 @@ class AccessPanel extends React.Component {
 			rowData: [...this.state.rowData, newEntry]
 		});
 	}
+
+	// renders a grid for rows representing all
+	// current data, and a panel for viewing and editing
+	// details for each row
 
 	render() {
 		return (
